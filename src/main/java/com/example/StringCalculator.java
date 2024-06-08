@@ -1,9 +1,5 @@
 package com.example;
 
-/**
- * Hello world!
- *
- */
 public class StringCalculator
 {
     public static void main( String[] args )
@@ -16,10 +12,11 @@ public class StringCalculator
             return 0;
         }
         String[] nums = numbers.split(",");
-        if (nums.length == 1) {
-            return Integer.parseInt(numbers);
+        int sum = 0;
+        for (String num : nums) {
+            sum += Integer.parseInt(num);
         }
-        return Integer.parseInt(nums[0]) + Integer.parseInt(nums[1]);
+        return sum;
     }
 
 }
