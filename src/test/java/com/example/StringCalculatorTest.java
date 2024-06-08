@@ -3,6 +3,8 @@
 package com.example;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
+
 import org.junit.Test;
 
 public class StringCalculatorTest {
@@ -42,5 +44,18 @@ public class StringCalculatorTest {
         StringCalculator calculator = new StringCalculator();
         assertEquals(3, calculator.add("//;\n1;2"));
         assertEquals(6, calculator.add("//|\n1|2|3"));
+    }
+    @Test
+    public void testNegativeNumbers() {
+        StringCalculator calculator = new StringCalculator();
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            calculator.add("1,-2,3");
+        });
+        assertEquals("negative numbers not allowed: -2", exception.getMessage());
+
+        exception = assertThrows(IllegalArgumentException.class, () -> {
+            calculator.add("1,-2,-3");
+        });
+        assertEquals("negative numbers not allowed: -2, -3", exception.getMessage());
     }
 }
