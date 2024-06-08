@@ -8,7 +8,7 @@ public class StringCalculator
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        System.out.println( "Welcome to string calculator" );
     }
 
     public int add(String numbers) {
