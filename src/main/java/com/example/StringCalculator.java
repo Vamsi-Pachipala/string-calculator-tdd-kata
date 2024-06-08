@@ -39,7 +39,7 @@ public class StringCalculator
             }
         }
         if (!negatives.isEmpty()) {
-            throw new IllegalArgumentException("negative numbers not allowed: " + negatives.toString().replace("[", "").replace("]", ""));
+            throw new IllegalArgumentException("negative numbers not allowed: " +negatives.toString().replace("[","").replace("]",""));
         }
         return sum;
     }
